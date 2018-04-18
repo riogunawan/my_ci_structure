@@ -1,0 +1,52 @@
+.wrapper-contact > .list-contact > ul > li.socmed > a {
+	margin-right: 39px;
+	margin-bottom: 20px;
+}
+
+ul .socmed .fa-google-plus {
+	background: #db4437;
+}
+
+ul .socmed .fa-pinterest-p {
+	background: #bd081c;
+}
+
+ul .socmed .fa-skype {
+	background: #00aff0;
+}
+
+ul .socmed .fa-tumblr {
+	background: #35465d;
+}
+
+ul .socmed .fa-whatsapp {
+	background: #25d366;
+}
+
+ul .socmed .fa-instagram {
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+	  /*-webkit-background-clip: text;
+	          background-clip: text;
+	  -webkit-text-fill-color: transparent;*/
+}
+
+ul .socmed .fa-youtube-play {
+	background: #ff0000;
+}
+
+ul .socmed .fa-snapchat-ghost {
+	background: #fffc00;
+}
+
+.gallery-wrapper {
+	/*height: 100% !important;*/
+}
+
+.gallery-wrapper > .grid-item {
+	/*display: inline-block;*/
+}
+
+#video .youtube-video iframe {
+	height: 200px;
+	width: 100%;
+}
