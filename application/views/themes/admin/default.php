@@ -1,126 +1,138 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>
-            <?php echo $title; ?>
-        </title>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-		<!-- css vendor-->
-		<?php
-        if (!empty($meta)) {
-            foreach($meta as $name=>$content){
-                echo "\n\t\t";
-                ?>
-                    <meta name="<?php echo $name; ?>" content="<?php echo $content; ?>" />
-                <?php
-            }
-        }
-        echo "\n";
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title><?= $title ?></title>
+    <!-- Favicon-->
+    <link rel="icon" href="<?= base_url("assets/themes/AdminBSBMaterialDesign/images/") ?>favicon.ico" type="image/x-icon">
 
-        if (!empty($canonical)) {
-            echo "\n\t\t";
-            ?>
-                <link rel="canonical" href="<?php echo $canonical?>" />
-            <?php
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
-        }
-        echo "\n\t";
-        ?>
+    <!-- Bootstrap Core Css -->
+    <link href="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
 
+    <!-- Waves Effect Css -->
+    <link href="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/node-waves/waves.css" rel="stylesheet" />
 
-		<!--css vendor -->
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/themes/e-disi-admin/vendors/bootstrap/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/themes/e-disi-admin/vendors/font-awesome/css/font-awesome.min.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/themes/e-disi-admin/vendors/custom-scroll/css/jquery.mCustomScrollbar.min.css" />
-		<link rel="stylesheet" href="<?php echo base_url() ?>assets/themes/e-disi-admin/vendors/sweetalert2/dist/sweetalert2.css">
-		
-		<!-- style -->
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/themes/e-disi-admin/stylesheets/css/font.css" />
-		<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/themes/e-disi-admin/stylesheets/css/style.css" />
+    <!-- Animation Css -->
+    <link href="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/animate-css/animate.css" rel="stylesheet" />
 
-		<style type="text/css">
-			.form-group .error {
-				color: red;
-				font-weight: 500;
-				border-color: red;
-			}
-		</style>
+	<!-- OTHERS Css -->
+    <?php 
+		foreach ($css as $file) {
+			echo "\n\t\t";
+			?>
+				<link rel="stylesheet" href="<?php echo $file; ?>" type="text/css" />
+			<?php
+		} 
+		echo "\n\t";
+	?>
+	
+    <!-- Custom Css -->
+    <link href="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>css/style.css" rel="stylesheet">
 
-		<!-- custom css-->
-		<?php 
-            foreach ($css as $file) {
-                echo "\n\t\t";
-                ?>
-                    <link rel="stylesheet" href="<?php echo $file; ?>" type="text/css" />
-                <?php
-            } 
-            echo "\n\t";
-        ?>
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>css/themes/all-themes.css" rel="stylesheet" />
 
-		<?php echo $script_head ?>
+    <!-- Custom Css FROM PROGRAMMER -->
+	<?php echo $script_head ?>
 
-		<!-- <link rel="shortcut icon" href="<?php echo base_url() ?>assets/themes/metronic/images/Logo-Titian.png" /> -->
-	</head>
-	<body>
-		<div class="check-device"></div>
-		
-		<!-- sidebar -->
-		<aside class="sidebar">
-		<?php echo $this->load->view('themes/admin/menu'); ?>
-		</aside>
-		<!-- end of aside -->
+	<!-- Jquery Core Js -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/jquery/jquery.min.js"></script>
 
-		<section class="wrapper">
+    <!-- Bootstrap Core Js -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/bootstrap/js/bootstrap.js"></script>
 
-			<!-- header -->
-			<header>
-				<div class="body-header">
-					<div class="sidebar-action">
-						<i class="fa fa-bars"></i>
-					</div>
+    <!-- Select Plugin Js -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
-					<!-- logo -->
-					<a href="#" class="logo-header">
-						<img src="<?= base_url('assets/themes/e-disi-admin/') ?>images/logo-dummy.jpg" />
-						<div class="logo-text">
-							<span class="title-logo">TITLE LOGO</span>
-							<span class="subtitle-logo">Subtitle Logo</span>
-						</div>
-					</a>
-					<!-- end of logo -->
+    <!-- Slimscroll Plugin Js -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
-				</div>
-			</header>
-			<!-- end of header -->			
+    <!-- Waves Effect Plugin Js -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/node-waves/waves.js"></script>
 
-			<?php echo $output;?>
-			
-		</section>
+    <!-- OTHERS JS -->
+    <?php 
+		foreach ($js as $file) {
+			echo "\n\t\t";
+			?>
+			<script src="<?php echo $file; ?>"></script>
+			<?php
+		} 
+		echo "\n\t";
+	?>
 
-		<!--begin::Base Scripts -->
-		<!-- javascript vendor-->
-		<script src="<?php echo base_url() ?>assets/themes/e-disi-admin/vendors/jquery/jquery-3.1.1.min.js"></script>
-		<script src="<?php echo base_url() ?>assets/themes/e-disi-admin/vendors/bootstrap/js/bootstrap.min.js"></script>
-		<script src="<?php echo base_url() ?>assets/themes/e-disi-admin/vendors/custom-scroll/js/jquery.mCustomScrollbar.concat.min.js"></script>
-		
-		<!-- main javascript -->
-		<script src="<?php echo base_url() ?>assets/themes/e-disi-admin/javascripts/main.js"></script>
+    <!-- Custom Js -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>js/admin.js"></script>
 
-		<!-- dashboard plugins -->
-		<script src="<?php echo base_url() ?>assets/themes/e-disi-admin/javascripts/sidebar-plugins.js"></script>
-		<!-- specific js on page-->
-		<script src="<?php echo base_url() ?>assets/themes/e-disi-admin/vendors/sweetalert2/dist/sweetalert2.js"></script>
-        <?php 
-            foreach ($js as $file) {
-                echo "\n\t\t";
-                ?>
-                <script src="<?php echo $file; ?>"></script>
-                <?php
-            } 
-            echo "\n\t";
-        ?>
+    <!-- Custom Js FROM PROGRAMMER-->
+    <?php echo $script_foot ?>
+    
+    <!-- Demo Js Color setting-->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>js/demo.js"></script>
+	
+</head>
 
-		<?php echo $script_foot ?>
-	</body>
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+
+    <!-- MENU TOP -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    	<?php $this->load->view("themes/admin/top_bar"); ?>
+    <!-- #Top Bar -->
+    <!-- CLOSE MENU TOP -->
+
+    <!-- SIDE MENU LEFT & RIGHT-->
+    <section>
+        <!-- Left Sidebar -->
+        	<?php $this->load->view("themes/admin/left_sidebar"); ?>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        	<?php $this->load->view("themes/admin/right_sidebar"); ?>
+        <!-- #END# Right Sidebar -->
+    </section>
+    <!-- CLOSE SIDE MENU LEFT & RIGHT-->
+
+    <!-- CONTENT-->
+    	<?php echo $output ?>
+    <!-- CLOSE CONTENT-->
+
+</body>
+
 </html>
