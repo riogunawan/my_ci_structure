@@ -26,11 +26,30 @@
     <div class="menu">
         <ul class="list">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="<?php echo ($this->uri->segment(1)=='dashboard' || $this->uri->segment(1)=='') ? "active" : "" ?>">
-                <a href="index.html">
+            <!-- CONTOH PAKAI CODEIGNITER MENAMBAHKAN CLASS ACTIVE -->
+            <li class="<?= ($this->uri->segment(1)=='dashboard' || $this->uri->segment(1)=='') ? "active" : "" ?>"> 
+                <a href="<?= site_url('') ?>">
                     <i class="material-icons">home</i>
                     <span>Dashboard</span>
                 </a>
+            </li>
+            <li class="<?= ($this->uri->segment(1)=='basic_form') ? "active" : "" ?>">
+                <a href="javascript:void(0);" class="menu-toggle">
+                    <i class="material-icons">assignment</i>
+                    <span>Basic Form</span>
+                </a>
+                <ul class="ml-menu">
+                    <li class="<?= ($this->uri->segment(2)=='input_text') ? "active" : "" ?>">
+                        <a href="<?= site_url('basic_form/input_text') ?>">
+                            <span>Input Text</span>
+                        </a>
+                    </li>
+                    <li class="mn-input-password">
+                        <a href="<?= site_url('basic_form/input_password') ?>">
+                            <span>Input Password</span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="javascript:void(0);" class="menu-toggle">

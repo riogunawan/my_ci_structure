@@ -1,3 +1,7 @@
+$(document).ready(function() {
+    $(".mn-dashboard").addClass("active");
+});
+
 $(function () {
     //Widgets count
     $('.count-to').countTo();

@@ -22,6 +22,9 @@
     <!-- Animation Css -->
     <link href="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/animate-css/animate.css" rel="stylesheet" />
 
+    <!-- Sweet Alert -->
+    <link href="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
 	<!-- OTHERS Css -->
     <?php 
 		foreach ($css as $file) {
@@ -41,50 +44,15 @@
 
     <!-- Custom Css FROM PROGRAMMER -->
 	<?php echo $script_head ?>
-
-	<!-- Jquery Core Js -->
-    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core Js -->
-    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/bootstrap/js/bootstrap.js"></script>
-
-    <!-- Select Plugin Js -->
-    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/bootstrap-select/js/bootstrap-select.js"></script>
-
-    <!-- Slimscroll Plugin Js -->
-    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
-
-    <!-- Waves Effect Plugin Js -->
-    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/node-waves/waves.js"></script>
-
-    <!-- OTHERS JS -->
-    <?php 
-		foreach ($js as $file) {
-			echo "\n\t\t";
-			?>
-			<script src="<?php echo $file; ?>"></script>
-			<?php
-		} 
-		echo "\n\t";
-	?>
-
-    <!-- Custom Js -->
-    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>js/admin.js"></script>
-
-    <!-- Custom Js FROM PROGRAMMER-->
-    <?php echo $script_foot ?>
-    
-    <!-- Demo Js Color setting-->
-    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>js/demo.js"></script>
 	
 </head>
 
-<body class="theme-red">
+<body class="theme-green">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
-            <div class="preloader">
-                <div class="spinner-layer pl-red">
+            <div class="preloader pl-size-xl">
+                <div class="spinner-layer pl-green">
                     <div class="circle-clipper left">
                         <div class="circle"></div>
                     </div>
@@ -133,6 +101,49 @@
     	<?php echo $output ?>
     <!-- CLOSE CONTENT-->
 
+    <!-- Jquery Core Js -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/bootstrap-select/js/bootstrap-select.js"></script> 
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Bootstrap Notify Plugin Js -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/bootstrap-notify/bootstrap-notify.js"></script>
+    
+    <!-- Waves Effect Plugin Js -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/node-waves/waves.js"></script>
+
+    <!-- validate -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/jquery-validation/jquery.validate.js"></script>
+
+    <!-- Sweet Alert Plugin Js -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>plugins/sweetalert/sweetalert.min.js"></script>
+
+    <!-- OTHERS JS -->
+    <?php 
+        foreach ($js as $file) {
+            echo "\n\t\t";
+            ?>
+            <script src="<?php echo $file; ?>"></script>
+            <?php
+        } 
+        echo "\n\t";
+    ?>
+    
+    <!-- Custom Js -->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>js/admin.js"></script>
+
+    <!-- Custom Js FROM PROGRAMMER-->
+    <?php echo $script_foot ?>
+
+    <!-- Demo Js Color setting-->
+    <script src="<?= base_url("assets/themes/AdminBSBMaterialDesign/") ?>js/demo.js"></script>
 </body>
 
 </html>
