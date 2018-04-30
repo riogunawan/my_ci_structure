@@ -12,7 +12,7 @@ class Input_text extends MX_Controller {
 		parent::__construct();
 		$this->output->set_template("admin/default");
 		$this->output->set_title($this->title);
-		// $this->load->model("M_input_text", "M_app");
+		$this->load->model("M_input_text", "M_app");
 	}
 
 	public function index () {
@@ -30,11 +30,32 @@ class Input_text extends MX_Controller {
 				"title" => $this->title,
 				"title_awal" => $this->title_awal,
 				"subtitle" => "List Data",
+				"link_add" => site_url("$this->module/form"),
+				"filter" => array(
+					"input_text" => form_input(array(
+						'name' => "input_text",
+						"class" => "form-control input_text",
+						"type" => "text",
+						 )),
+					),
 			);
 
 		$this->output->append_title(@$data['subtitle']);
 		$this->output->append_title(@$data['title_awal']);
 		$this->load->view("$this->module/data", $data);
+	}
+
+	public function data () {
+		$this->output->unset_template();
+		header("Content-type: application/json");
+		if (
+			isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
+			!empty($_SERVER['HTTP_X_REQUESTED_WITH']) &&
+			strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'
+		) {
+			echo $this->M_app->data($this->input->post());
+		}
+		return;
 	}
 
 }
