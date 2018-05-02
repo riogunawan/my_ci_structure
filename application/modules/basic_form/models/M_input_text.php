@@ -106,6 +106,29 @@ class M_input_text extends CI_Model {
 		return json_encode($output);
 	}
 
+	public function add ($data) {
+		$this->db->insert('basic_form', $data);
+		return $this->db->insert_id();
+	}
+
+	public function edit ($id, $data) {
+		$this->db
+			->where("id", $id)
+			->update("basic_form", $data);
+		return $this->db->affected_rows();
+	}
+
+	public function delete ($id) {
+		return $this->db
+			->where("id", $id)
+			->delete("basic_form");
+	}
+
+	public function cekid ($id) {
+		$this->db->where("id", $id);
+		return $this->db->get('basic_form');
+	}
+
 }
 
 /* End of file M_input_text.php */

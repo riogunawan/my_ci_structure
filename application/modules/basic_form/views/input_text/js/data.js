@@ -83,7 +83,7 @@ $(document).ready(function() {
             type: "warning",
             // animation: "slide-from-top",
             showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
+            confirmButtonColor: "#fb483a",
             cencelButtonColor: "#D9534F",
             confirmButtonText: "Hapus Data",
             cancelButtonText: "Batalkan",
@@ -100,10 +100,20 @@ $(document).ready(function() {
                     data: { id: id },
                     success: function (json) {
                         if (json.stat) {
-                            notif(true, "Data berhasil di hapus");
+                            // notif(true, "Data berhasil di hapus");
                             refreshTable();
+                            swal(
+                                'Deleted!',
+                                'Data telah dihapus.',
+                                'success'
+                            );
                         } else {
-                            notif(false, "Data gagal di hapus");
+                            // notif(false, "Data gagal di hapus");
+                            swal(
+                                'Gagal!',
+                                'Data gagal dihapus.',
+                                'error'
+                            )
                         }
                     }
                 });

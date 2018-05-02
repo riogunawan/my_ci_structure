@@ -15,16 +15,15 @@ function quirkNotif ($stat = false, $title, $msg = "") {
 	if ($msg == "") {
 		$submsg = "";
 	} else {
-		$submsg = "<div class='submsg'>$msg</div>";
+		$submsg = "$msg";
 	}
 	
-	// <div class='panel-body $bg notif'>
 	return "
-	<div class='alert $bg fade in' role='alert'>
-		<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-		<h4 class='alert-heading'>$title !</h4>
-		<p>$submsg</p>
-	</div>
+		<div class='alert $bg fade in alert-dismissible notif' role='alert'>
+			<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+			<h4 class='alert-heading'>$title !</h4>
+			$submsg
+		</div>
 	";
 }
 

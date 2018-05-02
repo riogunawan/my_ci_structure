@@ -9,12 +9,13 @@
         </div>
 
        <!-- Basic Examples -->
+        <?php echo $this->session->flashdata("msg") ?>
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
                         <h2>
-                            BASIC EXAMPLE
+                            <?php echo strtoupper($subtitle) ?>
                         </h2>
                         <ul class="header-dropdown m-r--5">
                             <li class="dropdown">
@@ -30,7 +31,7 @@
                         </ul>
                     </div>
                     <div class="body">
-                        <a href="#" class="btn btn-success waves-effect m-b-20">
+                        <a href="<?= $link_add ?>" class="btn btn-success waves-effect m-b-20">
                             <i class="material-icons">add</i>
                             <span>Tambah</span>
                         </a>
