@@ -10,7 +10,6 @@ function notification_proses($type="success",$title="Berhasil", $msg = "Berhasil
 }
 
 function quirkNotif ($stat = false, $title, $msg = "") {
-	// $bg = ($stat) ? "bg-notif-success" : "bg-notif-danger";
 	$bg = ($stat) ? "alert-success" : "alert-danger";
 	if ($msg == "") {
 		$submsg = "";

@@ -44,7 +44,7 @@
                             <span>Input Text</span>
                         </a>
                     </li>
-                    <li class="mn-input-password">
+                    <li class="<?= ($this->uri->segment(2)=='input_password') ? "active" : "" ?>">
                         <a href="<?= site_url('basic_form/input_password') ?>">
                             <span>Input Password</span>
                         </a>

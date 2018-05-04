@@ -1,21 +1,19 @@
 $(document).ready(function() {
-    // $(".mn-basic-form, .mn-input-text").addClass("active");
 
     $(".form-filter").on('click', '.btn-reset', function(event) {
         event.preventDefault();
 
         $(".form-filter").find("input").val("");
-        // $(".form-filter").find(".s2").select2("val", "");
 
         refreshTable();
     });
 
     $(".dataTable").DataTable({
         "ajax": {
-            "url"    :"<?php echo base_url("basic_form/input_text/data") ?>",
+            "url"    :"<?php echo base_url("basic_form/input_password/data") ?>",
             "method" :"POST",
             "data"   : function ( d ) {
-                d.input_text = $(".input_text").val();
+                d.input_password = $(".input_password").val();
             }
         },
 
@@ -25,7 +23,7 @@ $(document).ready(function() {
                 "class": "table-button-aksi",
                 "data": "aksi",
             },
-            {"data": "input_text"},
+            {"data": "input_password"},
         ],
 
         // "responsive": true,
@@ -94,14 +92,12 @@ $(document).ready(function() {
         function (isConfirm) {
             if (isConfirm) {
                 $.ajax({
-                    url: "<?php echo base_url("basic_form/input_text/delete_proses") ?>",
+                    url: "<?php echo base_url("basic_form/input_password/delete_proses") ?>",
                     type: "post",
                     dataType: "json",
                     data: { id: id },
                     success: function (json) {
                         if (json.stat) {
-                            // INI DAPAT DARI ASSET CUSTOM.JS
-                            // notif(true, "Data berhasil di hapus");
                             refreshTable();
                             swal(
                                 'Deleted!',
@@ -109,7 +105,6 @@ $(document).ready(function() {
                                 'success'
                             );
                         } else {
-                            // notif(false, "Data gagal di hapus");
                             swal(
                                 'Gagal!',
                                 'Data gagal dihapus.',
